@@ -20,7 +20,7 @@ import akka.http.scaladsl.marshalling.ToResponseMarshallable
 import akka.http.scaladsl.model.StatusCodes.InternalServerError
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
-import com.github.notvitor.http.config.ServerSettingsTemplate
+import com.github.notvitor.http.config.ServerSettingsTemplate._
 import com.github.notvitor.http.model.{ApiMessage, ApiStatusMessages}
 import de.heikoseeberger.akkahttpjson4s.Json4sSupport._
 import org.json4s.{DefaultFormats, jackson}
@@ -29,8 +29,6 @@ import scala.util.{Failure, Success}
 
 
 trait ResponseFactory {
-
-  import ServerSettingsTemplate._
 
   implicit val serialization = jackson.Serialization
   implicit val formats = DefaultFormats
